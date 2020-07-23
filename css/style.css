@@ -1,0 +1,86 @@
+body{
+    margin:0;
+    background: linear-gradient(90deg, black,green);
+}
+div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.kanan{
+    float: right;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.kiri{
+    float:left;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h1{
+    color: #0000ff;
+    text-align:center;
+    background-color: darkred;
+    padding: 10px;
+}
+h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+    width:fit-content;
+    background-color: blue;
+}
+
+span{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+ul li{
+    text-align: justify ;
+    font-size:16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+li:first-child{
+    color:red;
+}
+li:nth-child(2){
+    color: green;
+}
+li:nth-child(3){
+    color:blue;
+}
+li:nth-child(4){
+    color:darkgrey;
+}
+
+li:last-child{
+    color: #0000ff;
+}
+a{
+    text-decoration: none;
+    padding: 20px 40px;
+    background-color:red;
+    border-radius:10px;
+    margin-left: 10px;
+}
+a:first-child{
+    color: black;
+    background-color:red;
+}
+a:nth-child(2){
+    color: black;
+    background-color:green;
+}a:last-child{
+    color: black;
+    background-color:blue;
+}
+a:hover{
+    background-color: darkblue;
+    color: white;
+}

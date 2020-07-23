@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CV CSS</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: azure;
+        }
+        h1, h3{
+            font-stretch: expanded;
+            color: white;
+        }
+        h4{
+            background-color: blue;
+            margin-bottom: 2px;
+            padding: 5px;
+        }
+        img{
+            border-radius: 100%;
+            margin-right: ;
+            margin-left: 100px;
+
+        }
+        .head-wrapper{
+            text-align: center;
+            background-color: darkblue;
+            position: relative;
+            z-index: -1;
+        }
+        .side-content{
+            margin-top: 20px;
+            margin-left: 50px;
+            width: 20%;
+        }
+        .body-flex{
+            display: flex;
+            justify-content: space-between;
+        }
+        ul{
+            margin-left: 0;
+        }
+        li{
+            display:block;
+        }
+        .header-flex{
+            display: flex;
+            justify-content: center;
+        }
+        .list-flex{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .dekor-flex{
+            display: flex;
+            flex-direction: row;
+        }
+        .dekor1{
+            margin-left: 2%;
+            height: 1000px;
+            background-color:gray;
+            padding-right: 400px;;
+            position: absolute;
+            z-index: -2;
+        }
+        .dekor2{
+            margin-left: 0;
+            height: 1000px;
+            background-color:black;
+            padding-right: 40px;;
+            position: absolute;
+            z-index: -2;
+        }
+        p{
+            text-align: justify;
+            margin-top: 2px;
+        }
+        .title-content{
+            flex-grow: 3;
+        }
+        .content{
+            margin-left:60px ;
+            margin-right: 100px ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="head-wrapper">
+        <div class="dekor-flex"><div class="dekor1"></div><div class="dekor2"></div>
+        </div>
+        <div class="header-flex">
+                <div class="gambar"><img src="img/avatar.png" width="100px" height="100px"></div>
+                <div class="title-content">
+                    <h1>FERZA NANDA</h1>
+                    <h3>6282276722299</h3>
+                    <h3>ferzananda97@gmail.com</h3>
+                </div>
+        </div>
+    </div>
+    <div class="body-flex">
+            <div class="side-content">
+                <h4>Data Pribadi</h4>
+                <div class="list-flex">
+                <ul>
+                        <li>Nama</li>
+                        <li>TTL</li>
+                        <li>Alamat</li>
+                        <li>Jenis Kelamin</li>
+                        <li>Agama</li>
+                    </ul>
+                    <ul>
+                        <li>: Ferza Nanda</li>
+                        <li>: Banda Aceh</li>
+                        <li>: Lambaro Skep</li>
+                        <li>: Laki-laki</li>
+                        <li>: Islam</li>
+                    </ul>
+                </div>
+                    <div class="Skill">
+                        <h4>SKILL</h4>
+                        <div class="side-content">
+                            <form>
+                                <label for="office">Practical Office</label>
+                                <progress value="90" max="100"></progress>
+                                <label for="shop">PhotoShop</label>
+                                <progress value="85" max="100"></progress>
+                                <label for="corel">Corel Draw</label>
+                                <progress value="80" max="100"></progress>
+                                <label for="web">Web Design</label>
+                                <progress value="70" max="100"></progress>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        <div class="content">
+            <h4> Pengalaman Kerja</h4>
+                    <ul>
+                        <li><strong>Serambi</strong></li>
+                        <p>Deskripsi Pekerjaan:<br> melakukan perbaikan kerusakan yang bersangkutan dengan komputer dan device-device dengan melakukan cek perangkat secara berkala setiap minggunya.</p>
+                        <li>Inspektorat</li>
+                        <li>Sanbersy</li>
+                    </ul>
+            <h4>Riwayat Pendidikan</h4>
+                    <ul>
+                        <li>SD (2003-2009)</li>
+                        <li>SMP(2009-2012)</li>
+                        <li>SMA (2012-2015)</li>
+                        <li>UIN AR-Raniry (2015-2020)</li>
+                    </ul>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
