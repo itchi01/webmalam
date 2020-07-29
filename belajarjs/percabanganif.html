@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <titile></titile>
+</head>
+<body>
+    <form action="" name="formBilangan">
+        <h2>Menentukan bilangan positif dan negatif</h2>
+        <label for="formBilangan"></label>
+        <input type="text" name="inputBilangan"></input>
+
+        <button onclick="tanyaBilangan()" value="tanya">Tanya</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>
+        function tanyaBilangan() {
+            var bil=parseFloat(document.formBilangan.inputBilangan.value);
+            var jenis="";
+
+            if(isNaN(bil)){
+                // statement
+                alert('tidak ada bilangan yang dimasukkan');
+            }
+            else{
+                if(bil>0){
+                    // statement
+                    jenis="Bilangan Bernilai Positif";
+                }
+                else if(bil<0){
+                    // statement
+                    jenis="Bilangan Bernilai Negatif"
+                }else{
+                    // statement
+                    jenis="Bilangan Bulat"
+                }
+                alert(bil+""+jenis);
+            }
+        }
+
+    </script>
+</body>
+</html>
