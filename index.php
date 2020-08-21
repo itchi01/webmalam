@@ -76,10 +76,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-lg-3 offset-md-1">
-                        <div class="toc">
+                        <div class="toc bg-light px-2 py-2 mt-2">
                             <p>Table of Contents</p>
                             <ul>
-                                <li><a href="#">Aliquam In Arcu </a> </li>
+                                <li><a href="#1">The number has jumped to 5 million in 17 days. </a> </li>
                                 <li><a href="#">Ut vehicula rhoncus</a></li>
                                 <li><a href="#">Lorem Ipsum </a> </li>
                                 <li><a href="#">Dolor sit amet</a> </li>
@@ -100,7 +100,7 @@
                                 To put the number in perspective, that means the United States has had more Covid-19
                                 cases than Ireland has people. The number of cases is also slightly higher than the
                                 entire population of Alabama.</p>
-                            <h2>The number has jumped to 5 million in 17 days. </h2>
+                            <h2 id="1">The number has jumped to 5 million in 17 days. </h2>
                             <p>To put the speed in which the number is growing in perspective: It took the country 99
                                 days to reach 1 million, 43 days to hit 2 million, 28 days for 3 million and 15 days to
                                 surpass 4 million on July 23.
@@ -123,4 +123,9 @@
         <!-- end -->
         <?php include 'rsidebar.php'?>
     </div>
-    <?php include 'footer.php'?>
+</div>
+</body>
+
+<?php include 'footer.php'?>
+
+</html>

@@ -6,37 +6,37 @@
         <ul class="list-group list-group-flush">
             <a class="disabled  py-0 ml-0" href="#">
                 <li class="list-group-item my-0 d-flex justify-content-between align-items-center">
-                    Info /Tech
+                    DN /Tech
                     <span class="badge badge-primary badge-pill">14</span>
                 </li>
             </a>
             <a class="py-0" href="entertainment.php">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Info /Entertainment
+                    DN /Entertainment
                     <span class="badge badge-primary badge-pill">3</span>
                 </li>
             </a>
             <a class="py-0" href="#">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Info /World
+                    DN /World
                     <span class="badge badge-primary badge-pill">1</span>
                 </li>
             </a>
             <a class="py-0" href="#">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Info /Sports
+                    DN /Sports
                     <span class="badge badge-primary badge-pill">1</span>
                 </li>
             </a>
             <a class="py-0" href="#">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Info /Food
+                    DN /Food
                     <span class="badge badge-primary badge-pill">1</span>
                 </li>
             </a>
             <a class="py-0" href="corona.php">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Info /Health
+                    DN /Health
                     <span class="badge badge-primary badge-pill">1</span>
                 </li>
             </a>
@@ -50,7 +50,7 @@
         <div class="d-flex mr-4">
             <img src="https://m.economictimes.com/thumb/msid-74561086,width-1200,height-900,resizemode-4,imgsize-208858/corona.jpg"
                 width="40px;" height="40px;" style="border-radius: 100%; margin-right: 10px;">
-            <p class="my-0"><b>c/Health Corona</b></p>
+            <p class="my-0"><b>DN /Health Corona</b></p>
         </div>
         <div class="my-auto">
             <a href="corona.php">
@@ -62,7 +62,7 @@
         <div class="d-flex mr-4">
             <img src="https://cdn.cnn.com/cnnnext/dam/assets/191111100550-01-spacex-launch-1111-exlarge-169.jpg"
                 width="40px;" height="40px;" style="border-radius: 100%; margin-right: 10px;">
-            <p class="my-auto"><b>c/Tech Space X</b></p>
+            <p class="my-auto"><b>DN /Tech Space X</b></p>
         </div>
         <div class="my-auto">
             <button class="btn btn-primary">Peek</button>
@@ -72,7 +72,7 @@
         <div class="d-flex mr-4">
             <img src="https://images-na.ssl-images-amazon.com/images/I/51%2BBkAtO-lL._AC_SY400_.jpg" width="40px;"
                 height="40px;" style="border-radius: 100%; margin-right: 10px;">
-            <p class="my-auto"><b>c/Entertainment Yers Awards Game</b></p>
+            <p class="my-auto"><b>DN /Entertainment Yers Awards Game</b></p>
         </div>
         <div class="my-auto">
             <button class="btn btn-primary btn-block">Peek</button>

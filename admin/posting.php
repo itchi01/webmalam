@@ -28,15 +28,19 @@ function tambah($koneksi)
         $konten = $_POST['konten'];
         $tanggal = $_POST['tanggal_postingan'];
         $foto = $_FILES['gambar']['name'];
+        $creator = $_POST['creator'];
+        $kategori = $_POST['kategori'];
 
         if (move_uploaded_file($_FILES['gambar']['tmp_name'], "upload/postingan/" . $_FILES['gambar']['name'])) {
             echo "Gambar berhasil diupload";
         } else {
             echo "Gambar gagal diupload";
         }
-        $query_input = mysqli_query($koneksi, "INSERT INTO postingan VALUES('$id', '$judul', '$konten', '$tanggal', '$foto', '$id_user')");
+        $query_input = mysqli_query($koneksi, "INSERT INTO postingan VALUES('$id', '$judul', '$konten', '$tanggal', '$foto', '$id_user', '$creator')");
 
-        if ($query_input) {
+        $query_input_kategori = mysqli_query($koneksi, "INSERT INTO kategori VALUES('$id','$kategori')");
+
+        if ($query_input && $query_input_kategori) {
             echo '<script>alert("berhasil upload")
                         window.location.href="posting.php";
                         </script>';
@@ -62,6 +66,14 @@ function tambah($koneksi)
                                     <h4 class="card-title">Buat Postingan</h4>
                                     <form class="" action="" method="POST" enctype="multipart/form-data">
                                         <div class="form-row">
+                                            <div class="form-group">
+                                                <label>Pilih Kategori</label>
+                                                <select class="form-control" name="kategori">
+                                                    <option value="Health">Health</option>
+                                                    <option value="Tech">Tech</option>
+                                                    <option value="World">World</option>
+                                                </select>
+                                            </div>
                                             <div class="form-group col-md-12">
                                                 <label for="inputEmail4">Judul Kontent</label>
                                                 <input type="text" name="judul_postingan" class="form-control"
@@ -80,9 +92,11 @@ function tambah($koneksi)
                                                 <label>Masukkan konten</label>
                                                 <textarea id="summernote" name="konten"></textarea>
                                             </div>
+                                            <input type="hidden" value="<?php echo $_SESSION['nama'] ?>" name="creator">
                                             <div>
                                                 <button type="submit" name="input_postingan"
-                                                    class="btn btn-primary">Buat Postingan</button>
+                                                    class="btn btn-primary">Buat
+                                                    Postingan</button>
                                             </div>
                                     </form>
                                 </div>
