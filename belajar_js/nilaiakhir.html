@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <form action="" name="formNilai">
+        <label for="quiz">Quiz</label>
+        <input type="number" name="nilaiQuiz"></input><br>
+        <label for="tugas">tugas</label>
+        <input type="number" name="nilaiTugas"></input><br>
+        <label for="uts">uts</label>
+        <input type="number" name="nilaiUts"></input><br>
+        <label for="uas">uas</label>
+        <input type="number" name="nilaiUas"></input><br>
+        <hr>
+        <input type="text" name="hasilIp"><br>
+        <input type="text" name="keterangan">
+
+        <button class="btn btn-warning" value="Hitung" onclick="hitungNilai()">Hitung</button>
+    </form>
+
+    <script>
+        function hitungNilai(){
+        // nilai
+        var quiz=parseFloat(document.formNilai.nilaiQuiz.value);
+        var tugas=parseFloat(document.formNilai.nilaiTugas.value);
+        var uts=parseFloat(document.formNilai.nilaiUts.value);
+        var uas=parseFloat(document.formNilai.nilaiUas.value);
+
+        // tampilan
+        var ip="";
+        var ket="";
+
+        // nilaiakhir
+        var nilai_akhir=((0.10*quiz)+(0.20*tugas)+(0.30*uts)+(0.40*uas));
+
+        if(nilai_akhir>=85){
+            
+            ip="grade A";
+            ket="Nilai Sangat Memuaskan dan Baik";
+        }else if(nilai_akhir>=73){
+            ip="grade B";
+            ket="Nilai Sangat Memuaskan dan Baik";
+        }else if(nilai_akhir>=65){
+            ip="grade C";
+            ket="Cukup";
+        }else if(nilai_akhir>=50){
+            ip="grade D";
+            ket="Ulang";
+        }else{
+            ip="grade F";
+            ket="DO";
+        }
+        // alert
+
+        alert(ip+" "+ket);
+
+        document.formNilai.hasilIp.value=ip;
+        document.formNilai.keterangan.value=ket;
+        }
+    </script>
+</body>
+</html>
