@@ -4,31 +4,31 @@ include 'head.php';
 include 'proses/koneksi.php';
 
 if (!isset($_SESSION['level'])) {
-    //the session does not exist, redirect
-    header("location: login.php");
+  //the session does not exist, redirect
+  header("location: login.php");
 }
 
 ?>
 
 <body>
-    <div class="container-scroller">
-        <!-- partial:partials/_navbar.html -->
-        <?php include 'header.php'?>
-        <!-- partial -->
-        <div class="container-fluid page-body-wrapper">
-            <!-- partial:partials/_sidebar.html -->
-            <?php include 'sidebar.php'?>
-            <!-- partial -->
-            <div class="main-panel">
-                <div class="content-wrapper mr-0">
-                    <div class="row purchace-popup">
-                        <div class="col-12">
-                            <span class="d-flex align-items-center">
-                                <h3 class="text-black-50">Anda Login Sebagai <?php echo $_SESSION['level']; ?></h3>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- <div class="row">
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <?php include 'header.php' ?>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <?php include 'sidebar.php' ?>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper mr-0">
+          <div class="row purchace-popup">
+            <div class="col-12">
+              <span class="d-flex align-items-center">
+                <h3 class="text-black-50">Anda Login Sebagai <?php echo $_SESSION['level']; ?></h3>
+              </span>
+            </div>
+          </div>
+          <!-- <div class="row">
                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
                     <div class="card card-statistics">
                       <div class="card-body">
@@ -49,7 +49,7 @@ if (!isset($_SESSION['level'])) {
                       </div>
                     </div>
                   </div> -->
-                    <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+          <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
                     <div class="card card-statistics">
                       <div class="card-body">
                         <div class="clearfix">
@@ -69,7 +69,7 @@ if (!isset($_SESSION['level'])) {
                       </div>
                     </div>
                   </div> -->
-                    <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+          <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
                     <div class="card card-statistics">
                       <div class="card-body">
                         <div class="clearfix">
@@ -89,7 +89,7 @@ if (!isset($_SESSION['level'])) {
                       </div>
                     </div>
                   </div> -->
-                    <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+          <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
                     <div class="card card-statistics">
                       <div class="card-body">
                         <div class="clearfix">
@@ -113,7 +113,7 @@ if (!isset($_SESSION['level'])) {
                           <div class="row">
                             <div class="col-lg-7 grid-margin stretch-card">
                               <!--weather card-->
-                    <!-- <div class="card card-weather">
+          <!-- <div class="card card-weather">
                                         <div class="card-body">
                                             <div class="weather-date-location">
                                                 <h3>Monday</h3>
@@ -200,9 +200,9 @@ if (!isset($_SESSION['level'])) {
                                             </div>
                                         </div>
                                     </div> -->
-                    <!--weather card ends-->
-                    <!-- </div> -->
-                    <!-- <div class="col-lg-5 grid-margin stretch-card">
+          <!--weather card ends-->
+          <!-- </div> -->
+          <!-- <div class="col-lg-5 grid-margin stretch-card">
                               <div class="card">
                                 <div class="card-body">
                                   <h2 class="card-title text-primary mb-5">Performance History</h2>
@@ -440,90 +440,86 @@ if (!isset($_SESSION['level'])) {
                               </div>
                             </div>
                           </div> -->
-                    <?php
-include 'proses/koneksi.php';
+          <?php
+          include 'proses/koneksi.php';
 
-$sql = "select * from postingan inner join kategori on postingan.id_postingan=kategori.id_kategori";
-$query = mysqli_query($koneksi, $sql);
-?>
-                    <div class="row">
-                        <div class="col-12 grid-margin">
-                            <div class="card">
-                                <h4 class="text-primary mx-4 mt-4">Activity</h4>
-                                <?php while ($data = mysqli_fetch_assoc($query)) {
-    ?>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-4"><?php echo $data['creator'] ?></h5>
-                                    <div class="fluid-container">
-                                        <div class="row ticket-card mt-3 pb-2 border-bottom pb-3 mb-3">
-                                            <div class="col-md-1">
-                                                <img class="img-sm rounded-circle mb-4 mb-md-0"
-                                                    src="images/faces/face1.jpg" alt="profile image">
-                                            </div>
-                                            <div class="ticket-details col-md-9">
-                                                <div class="d-flex">
-                                                    <p class="text-gray mr-1 mb-0">Created Postingan
-                                                        <p class="text-info">
-                                                            "<?php echo $data['judul'] ?>"</p>
-                                                    </p>
-                                                </div>
-                                                <h6 class="text-black-50 mb-2"> <?php echo $data['konten'] ?></h6>
-                                                <div class="row text-gray d-md-flex d-none">
-                                                    <div class="col-4 d-flex">
-                                                        <small class="mb-0 mr-2 text-muted text-muted">Last Updated :
-                                                            <?php echo $data['tgl_release'] ?>
-                                                        </small>
-
-                                                    </div>
-                                                    <div class="col-4 d-flex">
-                                                        <small class="mb-0 mr-2 text-muted text-muted">Kategori :
-                                                            <?php echo $data['kategori'] ?></small>
-                                                        <small
-                                                            class="Last-responded mr-2 mb-0 text-muted text-muted"></small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="ticket-actions col-md-2">
-                                                <div class="btn-group dropdown">
-                                                    <button type="button" class="btn btn-success dropdown-toggle btn-sm"
-                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        Manage
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">
-                                                            <i class="fa fa-reply fa-fw"></i>Quick reply</a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <i class="fa fa-history fa-fw"></i>Another action</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item" href="#">
-                                                            <i class="fa fa-check text-success fa-fw"></i>Resolve
-                                                            Issue</a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <i class="fa fa-times text-danger fa-fw"></i>Close Issue</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php }?>
-                            </div>
+          $sql = "select * from postingan inner join kategori on postingan.id_postingan=kategori.id_kategori";
+          $query = mysqli_query($koneksi, $sql);
+          ?>
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <h4 class="text-primary mx-4 mt-4">Activity's Feed</h4>
+                <?php while ($data = mysqli_fetch_assoc($query)) {
+                ?>
+                  <div class="card-body">
+                    <h5 class="card-title mb-4"><?php echo $data['creator'] ?></h5>
+                    <div class="fluid-container">
+                      <div class="row ticket-card mt-3 pb-2 border-bottom pb-3 mb-3">
+                        <div class="col-md-1">
+                          <img class="img-sm rounded-circle mb-4 mb-md-0" src="images/faces/face1.jpg" alt="profile image">
                         </div>
+                        <div class="ticket-details col-md-9">
+                          <div class="d-flex">
+                            <p class="text-gray mr-1 mb-0">Created Postingan
+                              <p class="text-info">
+                                "<?php echo $data['judul'] ?>"</p>
+                            </p>
+                          </div>
+                          <h6 class="text-black-50 mb-2"> <?php echo $data['konten'] ?></h6>
+                          <div class="row text-gray d-md-flex d-none">
+                            <div class="col-4 d-flex">
+                              <small class="mb-0 mr-2 text-muted text-muted">Last Updated :
+                                <?php echo $data['tgl_release'] ?>
+                              </small>
+
+                            </div>
+                            <div class="col-4 d-flex">
+                              <small class="mb-0 mr-2 text-muted text-muted">Kategori :
+                                <?php echo $data['kategori'] ?></small>
+                              <small class="Last-responded mr-2 mb-0 text-muted text-muted"></small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ticket-actions col-md-2">
+                          <div class="btn-group dropdown">
+                            <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Manage
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">
+                                <i class="fa fa-reply fa-fw"></i>Quick reply</a>
+                              <a class="dropdown-item" href="#">
+                                <i class="fa fa-history fa-fw"></i>Another action</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">
+                                <i class="fa fa-check text-success fa-fw"></i>Resolve
+                                Issue</a>
+                              <a class="dropdown-item" href="#">
+                                <i class="fa fa-times text-danger fa-fw"></i>Close Issue</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-
-                </div>
-                <!-- content-wrapper ends -->
-                <!-- partial:partials/_footer.html -->
-                <?php include 'footer.php'?>
-                <!-- partial -->
+                  </div>
+                <?php } ?>
+              </div>
             </div>
+          </div>
 
-            <!-- main-panel ends -->
         </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <?php include 'footer.php' ?>
+        <!-- partial -->
+      </div>
 
-        <!-- page-body-wrapper ends -->
+      <!-- main-panel ends -->
     </div>
 
-    <!-- container-scroller -->
-    <?php include 'script.php'?>
+    <!-- page-body-wrapper ends -->
+  </div>
+
+  <!-- container-scroller -->
+  <?php include 'script.php' ?>

@@ -52,9 +52,8 @@
                 width="40px;" height="40px;" style="border-radius: 100%; margin-right: 10px;">
             <p class="my-0"><b>DN /Health Corona</b></p>
         </div>
-        <div class="my-auto">
+        <div class="my-auto mr-2">
             <a href="corona.php">
-                <button class="btn btn-primary btn-block">Peek</button>
             </a>
         </div>
     </div>
@@ -64,8 +63,7 @@
                 width="40px;" height="40px;" style="border-radius: 100%; margin-right: 10px;">
             <p class="my-auto"><b>DN /Tech Space X</b></p>
         </div>
-        <div class="my-auto">
-            <button class="btn btn-primary">Peek</button>
+        <div class="my-auto mr-2">
         </div>
     </div>
     <div class="d-flex justify-content-between ml-4 my-3">
@@ -74,8 +72,7 @@
                 height="40px;" style="border-radius: 100%; margin-right: 10px;">
             <p class="my-auto"><b>DN /Entertainment Yers Awards Game</b></p>
         </div>
-        <div class="my-auto">
-            <button class="btn btn-primary btn-block">Peek</button>
+        <div class="my-auto mr-2">
         </div>
     </div>
 </div>

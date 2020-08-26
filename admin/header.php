@@ -20,7 +20,8 @@ include 'proses/koneksi.php';
 </style>
 
 <nav class="navbar bggray default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <div class="bgdark text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+    <div title="Halaman Admin"
+        class="bgdark text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
         <a class="navbar-brand" href="index.php">
             <h3 class="fstyle mt-2">Web-Admin</h3>
         </a>

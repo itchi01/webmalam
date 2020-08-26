@@ -1,3 +1,7 @@
+<?php
+include 'admin/proses/koneksi.php';
+session_start();
+?>
 <html>
 
 <head>
@@ -74,6 +78,14 @@
         margin-top: 15px;
         right: 5%;
     }
+
+    .btn-light:focus {
+        box-shadow: none;
+    }
+
+    .show>.btn-light.dropdown-toggle:focus {
+        box-shadow: none;
+    }
     </style>
 </head>
 
@@ -90,11 +102,32 @@
                     type="search" placeholder="Search everything" aria-label="">
             </form>
         </div>
-        <div class="row col-sm-4">
+        <?php
+if (isset($_SESSION['level'])) {
+    echo '
+    <div class="row col-sm-4">
+            <a class="mr-5 pr-5"></a>
+            <div class="dropdown ml-4 mr-4">
+                    <a class="nav-link btn-lg btn-light border-0 bg-transparent text-black-50 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <strong>User</strong> <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item text-white-50 bg-dark" href="admin/">View Admin Page</a>
+                    <a class="dropdown-item text-white-50 bg-dark" href="admin/biodata.php">Profile</a>
+                    <a class="dropdown-item text-white-50 bg-dark" href="admin/proses/logout.php">LogOut</a>
+                </div>
+            </div>
+            <a class="nav-link btn btn-outline-info" href="admin/register.php">Register</a>
+    </div>
+';
+} else {
+    echo '<div class="row col-sm-4">
             <a class="mr-5 pr-5"></a>
             <a class="nav-link btn btn-warning mx-2" href="admin/">Login</a>
             <a class="nav-link btn btn-outline-info mr-3" href="admin/register.php">Register</a>
             <a href="#" class="nav-link disabled mr-0 pr-0" tabindex="-1" role="button" aria-disabled="true"><i
                     class="fa fa-user-o" aria-hidden="true"></i> Guest<span class="sr-only">(current)</span></a>
-        </div>
+        </div>';
+}
+?>
     </nav>

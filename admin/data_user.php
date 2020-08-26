@@ -93,7 +93,7 @@ if (!isset($_SESSION['level'])) {
                         <div class="col-md-6">
                           <div class="form-group w-50">
                             <label for="exampleInputName1">Nama</label>
-                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-dark" id="exampleInputName1" name="Masukkan Nama" placeholder="Name">
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-dark" id="exampleInputName1" name="nama" placeholder="Name">
                           </div>
                           <div class="form-group w-50">
                             <label for="exampleInputName1">Email</label>
@@ -217,7 +217,7 @@ if (!isset($_SESSION['level'])) {
                       <tbody class="dt-center">
                         <!-- php table -->
                         <?php
-                        $show_query = mysqli_query($koneksi, "SELECT * FROM user");
+                        $show_query = mysqli_query($koneksi, "SELECT * FROM user where level = 'author' or level = 'operator'");
                         if (mysqli_num_rows($show_query) == 0) {
                           echo '<tr><td>Tidak ada data</td></tr>';
                         } else {

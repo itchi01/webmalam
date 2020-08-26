@@ -31,6 +31,7 @@ if (!isset($_SESSION['level'])) {
       $tempat_lahir = $_POST['tempat_lahir'];
       $tanggal_lahir = $_POST['tanggal_lahir'];
       $jenis_kelamin = $_POST['jenis_kelamin'];
+      $id_user = $_POST['id_user'];
 
       $foto = $_FILES["gambar"]["name"];
       if (move_uploaded_file($_FILES['gambar']['tmp_name'], "upload/img/" . $_FILES['gambar']['name'])) {
@@ -39,12 +40,11 @@ if (!isset($_SESSION['level'])) {
         echo "Gambar Gagal diupload";
       }
 
-      $query_input = mysqli_query($koneksi, "INSERT INTO biodata VALUES('$id','$nama', '$nohp', '$tanggal_lahir', '$tempat_lahir', '$jenis_kelamin', '$alamat', '$foto')");
+      $query_input = mysqli_query($koneksi, "INSERT INTO biodata VALUES('$id','$nama', '$nohp', '$tanggal_lahir', '$tempat_lahir', '$jenis_kelamin', '$alamat', '$foto', '$id_user')");
 
       if ($query_input) {
         echo '<script>alert("data berhasil di input")
           window.location.href="biodata.php";
-          window.history.back();
          
         </script>';
       } else {
@@ -71,6 +71,7 @@ if (!isset($_SESSION['level'])) {
                 <div class="card">
                   <div class="card-body">
                     <form class="" action="" method="POST" enctype="multipart/form-data">
+                      <input type="hidden" value="<?php echo $_SESSION['id_user'] ?>" name="id_user"></input>
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="inputEmail4">Nama Lengkap</label>
@@ -107,7 +108,7 @@ if (!isset($_SESSION['level'])) {
                           <input id="gambar" type="file" class="form-control" name="gambar">
                         </div>
                       </div>
-                      <button type="submit" name="input_biodata" class="btn btn-primary">Sign in</button>
+                      <button type="submit" name="input_biodata" class="btn btn-primary">Simpan</button>
                     </form>
                   </div>
                 </div>
@@ -117,7 +118,8 @@ if (!isset($_SESSION['level'])) {
 
           function tampil_data($koneksi)
           {
-            $sql = 'SELECT * FROM biodata';
+            $id_user = $_SESSION['id_user'];
+            $sql = "SELECT * FROM biodata where id_user='$id_user'";
             $query = mysqli_query($koneksi, $sql); ?>
               <div class="col-md-12 grid-margin stretch-card card py-4">
                 <div class="card">

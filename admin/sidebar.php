@@ -14,29 +14,41 @@ include 'proses/koneksi.php';
                         <img src="images/faces/face1.jpg" alt="profile image">
                     </div>
                     <div class="text-wrapper">
-                        <p class="profile-name">
-                            <??>
+                        <p class="profile-name text-twitter">
+                            <?php echo $_SESSION['nama']; ?>
+                            *
                         </p>
                         <div>
-                            <small class="designation text-muted"><?php echo $_SESSION['nama']; ?></small>
+                            <small class="designation text-muted"><?php echo $_SESSION['level'] ?></small>
                             <span class="status-indicator online"></span>
                         </div>
                     </div>
                 </div>
-                <?php if ($_SESSION['level'] == 'author') {?>
-                <a href="posting.php" class="btn btn-success btn-block">New Postingan
-                    <i class="mdi mdi-plus"></i>
-                </a>
-                <?php }?>
-            </div>
-        </li>
+                <?php if ($_SESSION['level'] == 'author') { ?>
+                    <a href="posting.php" class="btn btn-success btn-block">New Postingan
+                        <i class="mdi mdi-plus"></i>
+                    </a>
         <li class="nav-item">
-            <a class="nav-link" href="index.php">
-                <i class="menu-icon mdi mdi-television"></i>
-                <span class="menu-title">Dashboard</span>
+            <a class="nav-link" href="biodata.php">
+                <i class="menu-icon mdi mdi-backup-restore"></i>
+                <span class="menu-title">My Biodata</span>
             </a>
         </li>
-        <?php if ($_SESSION['level'] == 'admin') {?>
+    <?php } ?>
+    <li class="nav-item">
+        <a class="nav-link" href="index.php">
+            <i class="menu-icon mdi mdi-television"></i>
+            <span class="menu-title">Dashboard</span>
+        </a>
+    </li>
+
+    <?php if ($_SESSION['level'] == 'admin') { ?>
+        <li class="nav-item">
+            <a class="nav-link" href="posting.php">
+                <i class="menu-icon mdi mdi-content-copy"></i>
+                <span class="menu-title">Postingan</span>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon mdi mdi-content-copy"></i>
@@ -58,16 +70,36 @@ include 'proses/koneksi.php';
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="biodata.php">
+            <a class="nav-link" href="biodata_user.php">
                 <i class="menu-icon mdi mdi-backup-restore"></i>
-                <span class="menu-title">Data Biodata</span>
+                <span class="menu-title">Data Biodata User</span>
             </a>
         </li>
-        <?php } else if ($_SESSION['level'] == 'operator') {?>
+    <?php } else if ($_SESSION['level'] == 'operator') { ?>
         <li class="nav-item">
             <a class="nav-link" href="posting.php">
-                <i class="menu-icon mdi mdi-chart-line"></i>
-                <span class="menu-title">Charts</span>
+                <i class="menu-icon mdi mdi-content-copy"></i>
+                <span class="menu-title">Postingan</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon mdi mdi-content-copy"></i>
+                <span class="menu-title">Data Master</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="kategori.php">Kategori</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="biodata_user.php">
+                <i class="menu-icon mdi mdi-backup-restore"></i>
+                <span class="menu-title">Data Biodata User</span>
             </a>
         </li>
         <!-- <li class="nav-item">
@@ -82,33 +114,21 @@ include 'proses/koneksi.php';
           <span class="menu-title">Icons</span>
         </a>
       </li> -->
-        <?php } else if ($_SESSION['level'] == 'author') {?>
+    <?php } else if ($_SESSION['level'] == 'author') { ?>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <i class="menu-icon mdi mdi-restart"></i>
-                <span class="menu-title">User Pages</span>
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon mdi mdi-content-copy"></i>
+                <span class="menu-title">Author Features</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="blank-page.php"> Blank Page </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php"> Login </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.php"> Register </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="error-404.php"> 404 </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="error-500.php"> 500 </a>
+                        <a class="nav-link" href="#">Contact Admin</a>
                     </li>
                 </ul>
             </div>
         </li>
-        <?php }?>
+    <?php } ?>
     </ul>
 </nav>

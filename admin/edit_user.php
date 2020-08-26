@@ -116,10 +116,31 @@ if (!isset($_SESSION['level'])) {
                             <label for="exampleInputName1">Username</label>
                             <input value="<?php echo $data['username']; ?>" type="text" class="form-control border-top-0 border-left-0 border-right-0 border-dark" id="exampleInputName1" name="username" placeholder="Masukkan Username">
                           </div>
-                          <div class="form-group w-50">
-                            <label for="exampleInputName1">Password</label>
-                            <input value="<?php echo $data['password']; ?>" type="password" readonly class="form-control border-top-0 border-left-0 border-right-0 border-dark" id="exampleInputName1" name="password" placeholder="******">
-                          </div>
+                          <?php
+                          if (!empty($data['password'])) { ?>
+                            <div class="col-md-6 w-50">
+                              <div class="form-group w-50">
+                                <input type="checkbox" class="" onclick="gantiPass()"> ganti password</input>
+                              </div>
+                            </div>
+                            <?php
+                            $a = 0;
+                            while ($a < 1) {
+                              if ($a == 1) {
+                                break;
+                              }
+                              echo '<div class="col-md-6 w-50" id="gantipass"></div>';
+                              $a++;
+                            }
+                            ?>
+                          <?php } else { ?>
+                            <div class="col-md-6 w-50">
+                              <div class="form-group w-50">
+                                <label for="exampleInputName1">Password</label>
+                                <input value="<?php echo $data['password']; ?>" type="password" readonly class="form-control border-top-0 border-left-0 border-right-0 border-dark" id="exampleInputName1" name="password" placeholder="******">
+                              </div>
+                            </div>
+                          <?php } ?>
                           <div class="form-group w-25 ">
                             <label for="exampleFormControlSelect2">Pilih User</label>
                             <?php if (empty($data['level'])) { ?>
@@ -129,7 +150,7 @@ if (!isset($_SESSION['level'])) {
                                 <option value="author">Author</option>
                               </select>
                             <?php } else { ?>
-                              <select>
+                              <select class="form-control" name="level" id="exampleFormControlSelect2">
                                 <option <?php echo ($data['level'] == 'admin') ? 'selected' : '' ?> value="admin">Admin</option>
                                 <option <?php echo ($data['level'] == 'operator') ? 'selected' : '' ?> value="operator">Operator</option>
                                 <option <?php echo ($data['level'] == 'author') ? 'selected' : '' ?> value="author">Author</option>
